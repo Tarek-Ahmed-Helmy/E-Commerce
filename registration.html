@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .register {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 50px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #088178;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #error-message {
+            color: red;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 799px) {
+            .form-container {
+                width: 75%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#"><img src="assets/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa-sharp fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-regular fa-circle-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-sharp fa-solid fa-bag-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </header>
+
+    <section id="page-header" class="about-header">
+        <h2>#hear_from_us</h2>
+        <p>We love to inform you with new updates!</p>
+    </section>
+
+    <section class="register">
+        <div class="form-container">
+            <h2>Register</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+            <p id="error-message"></p>
+        </div>
+    </section>
+    <hr>
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="assets/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Lorem ipsum dolor sit, amet consectetur</p>
+            <p><strong>Phone:</strong> 01157422454</p>
+            <p><strong>Hours:</strong> 10:00 - 22:00, 7-Days</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Info.</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="assets/pay/app.jpg" alt="">
+                <img src="assets/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="assets/pay/pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>@ 2024, ITI-Summer Training - HTML CSS JS Ecommerce</p>
+        </div>
+        <a href="#" id="back-to-top" aria-label="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </footer>
+    <script>
+        const registrationForm = document.getElementById("registrationForm");
+        registrationForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === '' || email === '' || password === '' || confirmPassword === '') {
+                errorMessage.textContent = 'All fields are required.';
+                return;
+            }
+            const phonePattern = /^(010|011|012|015)\d{8}$/;
+            if (!phonePattern.test(phoneNumber)) {
+                errorMessage.textContent = 'Please enter a valid Egyptian phone number.';
+                return;
+            }
+            const emailPattern = /^[^\s@]+@iti\.com$/;
+            if (!emailPattern.test(email)) {
+                errorMessage.textContent = 'Email must end with @iti.com.';
+                return;
+            }
+            if (password.length < 8) {
+                errorMessage.textContent = 'Passwords must be at least 8 characters.';
+                return;
+            }
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match.';
+                return;
+            }
+            errorMessage.textContent = '';
+            alert('Registration successful!');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
